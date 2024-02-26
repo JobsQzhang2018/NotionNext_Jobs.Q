@@ -42,6 +42,7 @@ export default function Live2D() {
 
   return <canvas id="live2d" width="200" height="250" onClick={handleClick}
         className="cursor-grab"
+        style={{ transform: 'translateX(30px)' }} // 向右移动 30 像素
         onMouseDown={(e) => e.target.classList.add('cursor-grabbing')}
         onMouseUp={(e) => e.target.classList.remove('cursor-grabbing')}
     />
