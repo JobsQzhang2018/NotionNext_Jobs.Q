@@ -3,6 +3,12 @@
 #theme-fukasawa .sideLeft hr{
     opacity: .04;
 }
+
 .fa-info:before {
     content: "\f05a";
+}
+
+/* 修改背景色为 #fbf1c7 */
+#theme-fukasawa {
+    background-color: #fbf1c7;
 }
