@@ -46,7 +46,7 @@ export default function Live2D() {
 
   return (
     <canvas
-      id='koharu'
+      id='live2d'
       width='280'
       height='250'
       onClick={handleClick}
