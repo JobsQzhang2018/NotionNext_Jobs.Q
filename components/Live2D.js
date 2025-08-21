@@ -18,7 +18,7 @@ export default function Live2D() {
     if (showPet && !isMobile()) {
       Promise.all([
         loadExternalResource(
-          'https://cdn.jsdelivr.net/npm/live2d-widget-model-epsilon2_1/assets/Epsilon2.1.model.json',
+          'https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/live2d.min.js',
           'js'
         )
       ]).then(e => {
