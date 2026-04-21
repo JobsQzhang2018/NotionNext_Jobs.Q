@@ -146,6 +146,7 @@ export default function LazyImage({
     onClick,
     // 性能优化属性
     loading: priority ? 'eager' : 'lazy',
+    fetchPriority: priority ? 'high' : 'auto',
     decoding: 'async',
     // 现代图片格式支持
     ...(siteConfig('WEBP_SUPPORT') && { 'data-webp': true }),

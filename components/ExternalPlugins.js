@@ -202,6 +202,7 @@ const ExternalPlugin = props => {
       {ANALYTICS_ACKEE_TRACKER && <Ackee />}
       {ANALYTICS_GOOGLE_ID && <Gtag />}
       {ANALYTICS_VERCEL && <Analytics />}
+      <SpeedInsights />
       {ANALYTICS_BUSUANZI_ENABLE && <Busuanzi />}
       {FACEBOOK_APP_ID && FACEBOOK_PAGE_ID && <Messenger />}
       {FIREWORKS && <Fireworks />}
@@ -486,6 +487,13 @@ const Analytics = dynamic(
   () =>
     import('@vercel/analytics/react').then(m => {
       return m.Analytics
+    }),
+  { ssr: false }
+)
+const SpeedInsights = dynamic(
+  () =>
+    import('@vercel/speed-insights/react').then(m => {
+      return m.SpeedInsights
     }),
   { ssr: false }
 )

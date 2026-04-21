@@ -39,6 +39,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
           <SmartLink href={post?.href} passHref legacyBehavior>
             <div className='flex flex-grow w-full relative duration-200 = rounded-t-md cursor-pointer transform overflow-hidden'>
               <LazyImage
+                priority={index >= 0 && index < 3}
                 src={post?.pageCoverThumbnail}
                 alt={post.title}
                 className='h-full w-full group-hover:scale-125 group-hover:brightness-50 rounded-t-md transform object-cover duration-500'
