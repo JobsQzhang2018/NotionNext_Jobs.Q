@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>车辆 · VR 全景</title>
+  <link rel="stylesheet" href="viewer.css?v=2">
+</head>
+<body>
+  <main id="stage" aria-label="车辆 VR 全景">
+    <canvas id="view" tabindex="0" aria-label="拖动连续环视，滚轮缩放；方向键移动视角，Home 键复位"></canvas>
+    <div id="hotspots" aria-label="场景入口与车辆卖点"></div>
+  </main>
+  <header>
+    <div class="brand"><a href="index.htm">← 全部车型</a><small id="modelName"></small></div>
+    <div class="tools" aria-label="全景控制">
+      <button id="zoomOut" title="缩小" aria-label="缩小">−</button>
+      <button id="zoomIn" title="放大" aria-label="放大">+</button>
+      <button id="reset" title="恢复初始视角" aria-label="恢复初始视角">↺</button>
+      <button id="rotate" title="自动环视" aria-label="自动环视" aria-pressed="false">⟳</button>
+      <button id="fullscreen" title="全屏" aria-label="全屏">⛶</button>
+    </div>
+  </header>
+  <p id="sceneName" aria-live="polite"></p>
+  <nav id="views" aria-label="选择全景场景"></nav>
+  <footer><button id="toggleViews" aria-expanded="true" aria-controls="views">▦ 场景</button><span>拖动环视 · 滚轮缩放 · 点击 ⊕ 查看卖点</span></footer>
+  <div id="status" role="status">正在加载原始全景…</div>
+  <dialog id="detail" aria-labelledby="detailTitle">
+    <div class="detail-head"><div><small id="detailModelName"></small><h2 id="detailTitle"></h2></div><button id="closeDetail" aria-label="关闭详情">×</button></div>
+    <p id="detailText"></p>
+    <div id="detailImages"></div>
+    <p class="source-note">说明及图片来自参考展示；系列配置以具体车型为准。</p>
+  </dialog>
+  <script src="panorama-math.js"></script>
+  <script src="viewer-page.js"></script>
+</body>
+</html>

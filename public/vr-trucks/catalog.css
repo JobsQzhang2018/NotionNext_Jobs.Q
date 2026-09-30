@@ -1,0 +1,21 @@
+:root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #172e33; background: #f3f5f4; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1320px; margin: auto; padding: 48px 32px 80px; }
+header { margin-bottom: 35px; }
+.eyebrow { margin: 0 0 8px; color: #227174; font-size: 12px; font-weight: 800; letter-spacing: .13em; }
+h1 { margin: 0; font-size: clamp(38px, 6vw, 68px); letter-spacing: -.04em; line-height: 1.15; }
+.intro { max-width: 680px; margin: 16px 0 18px; color: #55686d; }
+.count { margin: 0; color: #31565c; font-weight: 700; font-size: 13px; }
+.count span { padding: 0 7px; color: #96a8a9; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.card { display: block; overflow: hidden; border-radius: 16px; background: #fff; color: inherit; text-decoration: none; box-shadow: 0 6px 30px #1c424210; transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 14px 35px #1c424226; }
+.card:focus-visible { outline: 3px solid #e5864d; outline-offset: 4px; }
+.card img { display: block; width: 100%; aspect-ratio: 1.7; object-fit: cover; background: #d8dfde; }
+.card div { padding: 17px 20px 21px; }
+.card small { color: #598085; font-size: 12px; font-weight: 700; }
+.card h2 { margin: 5px 0 17px; font-size: 21px; line-height: 1.35; }
+.card span { color: #14666b; font-size: 13px; font-weight: 800; }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { main { padding: 30px 16px 50px; } .grid { grid-template-columns: 1fr; gap: 15px; } .card h2 { font-size: 19px; } }
