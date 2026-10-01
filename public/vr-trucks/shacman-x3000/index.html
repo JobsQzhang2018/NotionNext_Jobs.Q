@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>DIY · 陕汽 X3000 · VR 全景看车</title>
+  <link rel="stylesheet" href="../viewer.css">
+  <link rel="stylesheet" href="vr.css">
+</head>
+<body>
+  <main id="stage" aria-label="陕汽 X3000 VR 全景">
+    <canvas id="view" tabindex="0" aria-label="拖动连续环视，滚轮缩放；方向键移动视角，Home 键复位"></canvas>
+    <div id="hotspots" aria-label="场景入口"></div>
+  </main>
+  <header>
+    <div class="brand"><a href="photo-tour.html">↗ 查看实拍图集</a><small>DIY · SHACMAN X3000 · 6×4 自卸车</small></div>
+    <div class="tools" aria-label="全景控制">
+      <button id="zoomOut" title="缩小" aria-label="缩小">−</button>
+      <button id="zoomIn" title="放大" aria-label="放大">+</button>
+      <button id="reset" title="恢复初始视角" aria-label="恢复初始视角">↺</button>
+      <button id="rotate" title="自动环视" aria-label="自动环视" aria-pressed="false">⟳</button>
+      <button id="fullscreen" title="全屏" aria-label="全屏">⛶</button>
+    </div>
+  </header>
+  <div class="scene-caption"><strong id="sceneName" aria-live="polite"></strong><small>AI 重建全景 · 根据实拍生成</small></div>
+  <nav id="views" aria-label="选择 VR 场景"></nav>
+  <footer><button id="toggleViews" aria-expanded="true" aria-controls="views">▦ 场景</button><span>拖动环视 · 滚轮缩放 · 点击箭头绕车与进入驾驶室</span></footer>
+  <div id="status" role="status">正在加载全景…</div>
+  <dialog id="detail" aria-labelledby="detailTitle">
+    <div class="detail-head"><div><small id="detailModelName">SHACMAN X3000 · 原车实拍</small><h2 id="detailTitle"></h2></div><button id="closeDetail" aria-label="关闭详情">×</button></div>
+    <p id="detailText"></p><div id="detailImages"></div>
+    <p class="source-note">详情图片为原车实拍；环景为 AI 重建。</p>
+  </dialog>
+  <script src="../panorama-math.js"></script>
+  <script src="tour-data.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>

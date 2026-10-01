@@ -1,0 +1,1 @@
+window.PANO_FACES[900002] = {"f": "assets/panorama/900002-f.webp", "r": "assets/panorama/900002-r.webp", "b": "assets/panorama/900002-b.webp", "l": "assets/panorama/900002-l.webp", "u": "assets/panorama/900002-u.webp", "d": "assets/panorama/900002-d.webp"};

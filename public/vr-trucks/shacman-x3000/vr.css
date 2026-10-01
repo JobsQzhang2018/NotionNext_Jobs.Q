@@ -1,0 +1,10 @@
+body { background: #1b2729; }
+.brand, .brand a { color: #fff; text-shadow: 0 2px 8px #000b; }
+.brand small { color: #ffc395; }
+.scene-caption { position: fixed; z-index: 2; left: 50%; top: 12%; transform: translateX(-50%); display: grid; gap: 3px; text-align: center; color: #fff; text-shadow: 0 2px 8px #000b; pointer-events: none; }
+.scene-caption #sceneName { position: static; transform: none; font-size: 22px; }
+.scene-caption small { font-size: 11px; letter-spacing: .1em; }
+#views { background: #1a2529ad; }
+#views button[aria-current="true"] { border-color: #ff872c; box-shadow: 0 0 0 1px #ff872c; }
+footer span { text-align: right; }
+@media (max-width: 640px) { .scene-caption { top: 10%; } .scene-caption #sceneName { font-size: 18px; } }

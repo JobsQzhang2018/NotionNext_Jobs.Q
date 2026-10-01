@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>DIY · SHACMAN X3000｜实拍看车</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tour">
+    <div class="backdrop" aria-hidden="true"></div>
+    <img id="scene" class="scene" src="assets/3716.webp" alt="橘色 SHACMAN X3000 自卸车斜前方实拍" fetchpriority="high">
+    <div class="shade" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="返回展示首页"><span class="brand-mark">S</span><span>SHACMAN <small>影像看车</small></span></a>
+      <span class="top-note">X3000 <i></i> 6×4 自卸车</span>
+      <button id="fullscreen" class="round-button" type="button" aria-label="切换全屏" title="切换全屏">⛶</button>
+    </header>
+
+    <section class="intro" id="top" aria-labelledby="vehicle-title">
+      <p class="eyebrow"><span class="line"></span> 实车影像档案 <span id="chapter-number">01 / 04</span></p>
+      <h1 id="vehicle-title">陕汽 X3000<br><em>橘色自卸车</em></h1>
+      <p class="intro-copy">从整车轮廓，到驾驶室与车身结构。沿着这组实拍影像，逐处了解这辆车。</p>
+      <div class="vehicle-meta"><span>6×4 驱动形式</span><span>左舵驾驶室</span><span>资料标注 375 HP</span></div>
+      <button class="intro-link" id="start" type="button">开始看车 <span>↗</span></button>
+    </section>
+
+    <div class="view-label" aria-live="polite"><span id="view-index">01</span><span class="view-separator"></span><div><small id="view-group">整车外观</small><strong id="view-title">斜前方 · 整车视角</strong><span id="view-source">原始实拍</span></div></div>
+
+    <nav class="chapter-nav" aria-label="选择看车章节">
+      <button type="button" data-group="exterior" aria-current="true"><span>01</span> 整车外观</button>
+      <button type="button" data-group="cab"><span>02</span> 驾驶室</button>
+      <button type="button" data-group="details"><span>03</span> 车身细节</button>
+      <button type="button" data-group="service"><span>04</span> 检修记录</button>
+    </nav>
+
+    <div class="controls">
+      <div class="control-copy"><span class="signal"></span><span id="view-description">45° 视角展示驾驶室、货箱与三轴布局。</span></div>
+      <div class="arrows"><button id="open-image" type="button" aria-label="查看大图">⌕</button><button id="previous" type="button" aria-label="上一张">←</button><button id="next" type="button" aria-label="下一张">→</button></div>
+    </div>
+
+    <div class="filmstrip" id="filmstrip" role="group" aria-label="选择实拍照片"></div>
+
+    <footer class="footnote"><span>实拍与生成补图 · 拖动切换 · 点击放大</span><span>生成图逐张标识 <b>·</b> 非球形 360° 全景</span></footer>
+  </main>
+
+  <dialog id="lightbox" aria-label="查看大图">
+    <button id="close-lightbox" type="button" aria-label="关闭大图">×</button>
+    <img id="large-image" alt="">
+    <p id="large-caption"></p>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
