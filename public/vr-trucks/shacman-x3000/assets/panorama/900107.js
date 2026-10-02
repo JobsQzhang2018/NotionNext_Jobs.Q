@@ -1,0 +1,1 @@
+window.PANO_FACES[900107] = {"f":"assets/panorama/900107-f.png?v=6","r":"assets/panorama/900107-r.png?v=6","b":"assets/panorama/900107-b.png?v=6","l":"assets/panorama/900107-l.png?v=6","u":"assets/panorama/900107-u.png?v=6","d":"assets/panorama/900107-d.png?v=6"};

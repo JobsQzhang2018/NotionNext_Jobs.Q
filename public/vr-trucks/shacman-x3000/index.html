@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/vr-trucks/shacman-x3000/">
   <meta name="color-scheme" content="light">
-  <title>DIY · 陕汽 X3000 · VR 全景看车</title>
-  <link rel="stylesheet" href="../viewer.css">
-  <link rel="stylesheet" href="vr.css">
+  <title>陕汽 SHACMAN X3000 DIY · VR 全景</title>
+  <link rel="stylesheet" href="viewer.css?v=2">
 </head>
 <body>
-  <main id="stage" aria-label="陕汽 X3000 VR 全景">
+  <main id="stage" aria-label="车辆 VR 全景">
     <canvas id="view" tabindex="0" aria-label="拖动连续环视，滚轮缩放；方向键移动视角，Home 键复位"></canvas>
-    <div id="hotspots" aria-label="场景入口"></div>
+    <div id="hotspots" aria-label="场景入口与车辆卖点"></div>
   </main>
   <header>
-    <div class="brand"><a href="photo-tour.html">↗ 查看实拍图集</a><small>DIY · SHACMAN X3000 · 6×4 自卸车</small></div>
+    <div class="brand"><a href="../index.htm">← 全部车型</a><small id="modelName">陕汽 SHACMAN X3000 6×4 自卸车 · DIY</small></div>
     <div class="tools" aria-label="全景控制">
       <button id="zoomOut" title="缩小" aria-label="缩小">−</button>
       <button id="zoomIn" title="放大" aria-label="放大">+</button>
@@ -24,17 +23,18 @@
       <button id="fullscreen" title="全屏" aria-label="全屏">⛶</button>
     </div>
   </header>
-  <div class="scene-caption"><strong id="sceneName" aria-live="polite"></strong><small>AI 重建全景 · 根据实拍生成</small></div>
-  <nav id="views" aria-label="选择 VR 场景"></nav>
-  <footer><button id="toggleViews" aria-expanded="true" aria-controls="views">▦ 场景</button><span>拖动环视 · 滚轮缩放 · 点击箭头绕车与进入驾驶室</span></footer>
+  <p id="sceneName" aria-live="polite"></p>
+  <nav id="views" aria-label="选择全景场景"></nav>
+  <footer><button id="toggleViews" aria-expanded="true" aria-controls="views">▦ 场景</button><span>拖动环视 · 滚轮缩放 · 点击 ⊕ 查看卖点</span></footer>
   <div id="status" role="status">正在加载全景…</div>
   <dialog id="detail" aria-labelledby="detailTitle">
-    <div class="detail-head"><div><small id="detailModelName">SHACMAN X3000 · 原车实拍</small><h2 id="detailTitle"></h2></div><button id="closeDetail" aria-label="关闭详情">×</button></div>
-    <p id="detailText"></p><div id="detailImages"></div>
-    <p class="source-note">详情图片为原车实拍；环景为 AI 重建。</p>
+    <div class="detail-head"><div><small id="detailModelName">SHACMAN X3000 · 原车细节</small><h2 id="detailTitle"></h2></div><button id="closeDetail" aria-label="关闭详情">×</button></div>
+    <p id="detailText"></p>
+    <div id="detailImages"></div>
+    <p class="source-note">内外环景为合成展示；细节图片来自原车素材，配置以实车为准。</p>
   </dialog>
-  <script src="../panorama-math.js"></script>
-  <script src="tour-data.js"></script>
-  <script src="viewer.js"></script>
+  <script src="panorama-math.js"></script>
+  <script src="tour-data.js?v=3"></script>
+  <script src="viewer.js?v=6"></script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; font: 14px/1.5 system-ui, sans-serif; color: #17383e; background: #bfc0c1; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, canvas:focus-visible { outline: 3px solid #f5944b; outline-offset: 3px; }
+#stage, #view, #hotspots { position: absolute; inset: 0; width: 100%; height: 100%; }
+#view { display: block; touch-action: none; cursor: grab; }
+#view:active { cursor: grabbing; }
+#hotspots { pointer-events: none; overflow: hidden; }
+header { position: fixed; z-index: 2; top: 24px; left: 26px; right: 24px; display: flex; justify-content: space-between; align-items: start; pointer-events: none; }
+.brand { color: #20565e; font-size: 26px; font-weight: 900; line-height: 1; letter-spacing: .03em; text-shadow: 0 1px 1px #fff8; }
+.brand a { color: inherit; font-size: 16px; text-decoration: none; pointer-events: auto; }
+.brand a:hover { text-decoration: underline; }
+.brand small { display: block; font-size: 11px; margin-top: 8px; font-weight: 600; }
+.tools { display: flex; flex-direction: column; gap: 9px; pointer-events: auto; }
+.tools button, footer button { border: 1px solid #fff5; color: white; background: #374044ad; border-radius: 50%; width: 36px; height: 36px; font-size: 23px; line-height: 1; }
+.tools button:hover, .tools button[aria-pressed="true"] { background: #1d666f; }
+#sceneName { position: fixed; top: 14%; left: 50%; transform: translateX(-50%); color: white; text-shadow: 0 1px 4px #0006; pointer-events: none; }
+#views { position: fixed; z-index: 2; bottom: 58px; left: 0; right: 0; display: flex; justify-content: center; gap: 9px; padding: 6px 12px; background: #494c4f70; overflow-x: auto; }
+#views[hidden] { display: none; }
+#views button { position: relative; flex: 0 0 65px; width: 65px; height: 65px; padding: 0; border: 2px solid white; border-radius: 4px; overflow: hidden; color: white; background: #aaa; }
+#views button[aria-current="true"] { border-color: #f79552; box-shadow: 0 0 0 1px #f79552; }
+#views img { width: 100%; height: 100%; object-fit: cover; }
+#views span { position: absolute; bottom: 0; left: 0; right: 0; font-size: 11px; background: #444a; line-height: 18px; }
+footer { position: fixed; z-index: 2; bottom: 18px; left: 25px; right: 25px; display: flex; align-items: center; justify-content: space-between; color: white; text-shadow: 0 1px 4px #0005; font-size: 12px; pointer-events: none; }
+footer button { width: auto; border-radius: 20px; padding: 9px 14px; font-size: 13px; pointer-events: auto; }
+.hotspot { position: absolute; left: 0; top: 0; border: 0; padding: 8px; width: 46px; height: 46px; background: none; color: #fff; text-shadow: 0 2px 5px #0009; pointer-events: auto; }
+.hotspot svg { width: 29px; height: 29px; filter: drop-shadow(0 2px 2px #0006); }
+.hotspot .label { position: absolute; bottom: 53px; left: 50%; transform: translateX(-50%); padding: 6px 10px; border-radius: 5px; background: #3339; white-space: nowrap; font-size: 12px; }
+.hotspot.detail .label { opacity: 0; transition: opacity .15s; }
+.hotspot.detail:hover .label, .hotspot.detail:focus-visible .label { opacity: 1; }
+.hotspot.detail svg { background: #34454c8a; border-radius: 50%; box-shadow: 0 0 0 5px #fff2; }
+.hotspot:hover svg { transform: scale(1.15); }
+#status { position: fixed; z-index: 5; top: 50%; left: 50%; transform: translate(-50%,-50%); padding: 14px 20px; border-radius: 8px; background: #23363de6; color: white; max-width: 90%; text-align: center; }
+#status[hidden] { display: none; }
+dialog { padding: 0; border: 0; border-radius: 14px; width: min(800px, 94vw); max-height: 90vh; color: #26333a; background: white; box-shadow: 0 20px 80px #0005; }
+dialog::backdrop { background: #0a131bb3; backdrop-filter: blur(5px); }
+.detail-head { display: flex; justify-content: space-between; gap: 20px; padding: 22px 26px 0; }
+.detail-head small { color: #627579; font-size: 11px; letter-spacing: .1em; }
+.detail-head h2 { margin: 5px 0; font-size: 23px; }
+#closeDetail { align-self: flex-start; border: 0; background: #eef1f2; border-radius: 50%; font-size: 27px; width: 36px; height: 36px; }
+#detailText { margin: 8px 26px 15px; color: #4f5b61; line-height: 1.8; }
+#detailImages img { display: block; width: 100%; height: auto; }
+.source-note { margin: 12px 26px 22px; color: #7b858b; font-size: 12px; }
+@media (max-width: 640px) {
+  header { top: 16px; left: 16px; right: 12px; }
+  .brand { font-size: 21px; }
+  .tools { gap: 6px; }
+  .tools button { width: 32px; height: 32px; font-size: 20px; }
+  #views { justify-content: flex-start; bottom: 68px; gap: 7px; }
+  #views button { width: 65px; height: 65px; flex-basis: 65px; }
+  footer { left: 14px; right: 14px; bottom: 14px; }
+  footer span { max-width: 205px; text-align: right; }
+  #sceneName { top: 10%; }
+}

@@ -78,7 +78,7 @@
   function loadSceneData(id) {
     if(PANO_FACES[id])return Promise.resolve(PANO_FACES[id]);
     if(!scripts.has(id))scripts.set(id,new Promise((resolve,reject)=>{
-      const script=document.createElement('script'); script.src=`assets/panorama/${id}.js`;
+      const script=document.createElement('script'); script.src=`assets/panorama/${id}.js?v=6`;
       script.onload=()=>resolve(PANO_FACES[id]); script.onerror=()=>{scripts.delete(id);script.remove();reject(new Error('场景素材未找到'));};
       document.head.append(script);
     }));
