@@ -272,7 +272,7 @@ window.TOUR = [
       "hLookAtMax": 180,
       "hLookAtMin": -180
     },
-    "thumb": "assets/panorama/900107-f.png?v=6",
+    "thumb": "assets/panorama/900107-f.webp?v=7",
     "hotspots": [
       {
         "title": "返回车外",

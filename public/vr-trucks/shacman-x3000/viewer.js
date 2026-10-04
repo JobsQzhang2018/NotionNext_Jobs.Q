@@ -86,6 +86,7 @@
   }
   async function showScene(id) {
     const next=TOUR.find(scene=>scene.id===id); if(!next)return;
+    if(current?.id===id&&status.hidden)return;
     const token=++generation; status.textContent='正在加载全景…'; status.hidden=false; overlay.hidden=true;
     try {
       const faces=await loadSceneData(id);
@@ -131,10 +132,11 @@
     const width=canvas.clientWidth,height=canvas.clientHeight,dpr=Math.min(devicePixelRatio||1,2);
     if(canvas.width!==Math.round(width*dpr)||canvas.height!==Math.round(height*dpr)){canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);gl.viewport(0,0,canvas.width,canvas.height);}
     const view=camera(yaw,pitch,fov,width,height);
+    if(current.id!==900107)view.focal*=Math.min(1,width/height*1.5);
     gl.uniform2f(uniforms.span,width/(2*view.focal),height/(2*view.focal));
     gl.uniform3fv(uniforms.rightAxis,view.right);gl.uniform3fv(uniforms.downAxis,view.down);gl.uniform3fv(uniforms.forwardAxis,view.forward);
     gl.drawArrays(gl.TRIANGLES,0,6);
-    for(const {h,button} of hotspots){const point=project(h.yaw,h.pitch,view,width,height);const visible=point&&point.x>-40&&point.x<width+40&&point.y>-40&&point.y<height+40;button.hidden=!visible;if(visible)button.style.transform=`translate(${point.x-23}px,${point.y-23}px)`;}
+    for(const {h,button} of hotspots){const point=project(h.yaw,h.pitch,view,width,height);const visible=point&&point.x>-40&&point.x<width+40&&point.y>-40&&point.y<height+40;button.hidden=!visible;if(visible)button.style.transform=`translate(${clamp(point.x-23,0,width-46)}px,${clamp(point.y-23,0,height-46)}px)`;}
     // Expose current camera on the canvas for accessible diagnostics and verification.
     canvas.dataset.yaw=yaw.toFixed(3);canvas.dataset.pitch=pitch.toFixed(3);canvas.dataset.fov=fov.toFixed(3);canvas.dataset.scene=current.id;
   }

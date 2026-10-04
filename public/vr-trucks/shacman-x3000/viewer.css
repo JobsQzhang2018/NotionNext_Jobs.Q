@@ -45,7 +45,8 @@ dialog::backdrop { background: #0a131bb3; backdrop-filter: blur(5px); }
   header { top: 16px; left: 16px; right: 12px; }
   .brand { font-size: 21px; }
   .tools { gap: 6px; }
-  .tools button { width: 32px; height: 32px; font-size: 20px; }
+  .tools button { width: 40px; height: 40px; font-size: 20px; }
+  .hotspot.scene .label { display: none; }
   #views { justify-content: flex-start; bottom: 68px; gap: 7px; }
   #views button { width: 65px; height: 65px; flex-basis: 65px; }
   footer { left: 14px; right: 14px; bottom: 14px; }
