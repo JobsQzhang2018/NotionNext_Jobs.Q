@@ -1,1 +1,1 @@
-window.PANO_FACES[900107] = {"f":"assets/panorama/900107-f.webp?v=7","r":"assets/panorama/900107-r.webp?v=7","b":"assets/panorama/900107-b.webp?v=7","l":"assets/panorama/900107-l.webp?v=7","u":"assets/panorama/900107-u.webp?v=7","d":"assets/panorama/900107-d.webp?v=7"};
+window.PANO_FACES[900107] = {"f":"assets/panorama/900107-f-sharp.webp?v=8","r":"assets/panorama/900107-r-sharp.webp?v=8","b":"assets/panorama/900107-b-sharp.webp?v=8","l":"assets/panorama/900107-l-sharp.webp?v=8","u":"assets/panorama/900107-u-sharp.webp?v=8","d":"assets/panorama/900107-d-sharp.webp?v=8"};
