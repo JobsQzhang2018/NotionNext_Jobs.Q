@@ -4,7 +4,7 @@
   "homepage": "https://github.com/tangly1024/NotionNext.git",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": "24.x"
   },
   "repository": {
     "type": "git",
@@ -49,6 +49,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "@clerk/localizations": "^3.17.1",
     "@clerk/nextjs": "^5.7.5",
     "@headlessui/react": "^1.7.19",
@@ -77,6 +78,7 @@
     "react-tweet-embed": "~2.0.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^9.0.0",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",
